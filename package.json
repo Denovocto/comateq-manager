@@ -6,7 +6,8 @@
 		"start": "ng serve",
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
-		"test": "ng test"
+		"test": "ng test",
+		"serve": "concurrently \"ng serve\" \"src/server/node_modules/.bin/ts-node src/server/src/index.ts\""
 	},
 	"private": true,
 	"dependencies": {
@@ -20,6 +21,7 @@
 		"@angular/platform-browser": "~12.2.0",
 		"@angular/platform-browser-dynamic": "~12.2.0",
 		"@angular/router": "~12.2.0",
+		"concurrently": "^7.1.0",
 		"mysql": "^2.18.1",
 		"ng-cli-pug-loader": "^0.2.2",
 		"pug": "^3.0.2",
