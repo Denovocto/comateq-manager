@@ -1,0 +1,13 @@
+mat-card.flex.my-10.m-auto.max-w-sm.max-h-90
+  mat-card-title Login
+  mat-card-content
+    .flex.flex-col
+      mat-form-field
+        mat-label Email
+        input(matInput, placeholder='email@example.com', type='email', required, autocomplete='email')
+      mat-form-field
+        mat-label Password
+        input(matInput, placeholder='Password', type='password', required, autocomplete='current-password')
+  mat-card-actions.flex.flex-row
+    button(mat-button, color='primary', type='submit')
+      span Login

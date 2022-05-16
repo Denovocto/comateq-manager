@@ -1,34 +1,47 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { ParticipantGroup } from './ParticipantGroup';
+import { School } from './School';
 @Entity()
 export class Participant {
-	@PrimaryGeneratedColumn()
-	participantId: number;
+	@PrimaryGeneratedColumn('uuid')
+	participantId: string;
 
 	@Column({
 		length: 50,
 		type: 'varchar',
 	})
-	firstName: string;
+	participantFirstName: string;
 
 	@Column({
 		length: 50,
 		type: 'varchar',
 	})
-	secondName: string;
+	participantMiddleName?: string;
 
 	@Column({
 		length: 50,
 		type: 'varchar',
 	})
-	lastName: string;
+	participantLastName: string;
 
 	@Column({
 		length: 50,
 		type: 'varchar',
 	})
-	secondLastName: string;
+	participantSecondLastName?: string;
 
 	@Column('date')
-	dateOfBirth: Date;
+	participantDateOfBirth: Date;
+
+	@Column()
+	participantGrade: number;
+
+	@ManyToOne(type => School, school => school.schoolParticipants)
+	participantSchool: School;
+
+	@ManyToOne(
+		type => ParticipantGroup,
+		participantGroup => participantGroup.participants
+	)
+	participantGroup?: ParticipantGroup;
 }
