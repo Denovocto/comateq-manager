@@ -1,0 +1,7 @@
+.flex.flex-col.justify-items-starts
+  mat-card.my-2(*ngFor='let administrator of administrators')
+    mat-card-title {{ administrator.administratorFirstName }} {{ administrator.administratorMiddleName }} {{ administrator.administratorLastName }} {{ administrator.administratorSecondLastName }}
+    mat-card-content
+      .flex.flex-col
+        span Email: {{ administrator.administratorEmail }}
+        span Work Title: {{ administrator.administratorInstitutionWorkTitle }}

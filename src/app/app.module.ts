@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CoordinatorsModule } from './modules/coordinators/coordinators.module';
+import { AdministratorsModule } from './modules/administrators/administrators.module';
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
@@ -22,6 +23,7 @@ import { CoordinatorsModule } from './modules/coordinators/coordinators.module';
 		TopBarModule,
 		ParticipantsModule,
 		CoordinatorsModule,
+		AdministratorsModule,
 		MatNativeDateModule,
 		BrowserAnimationsModule,
 		HttpClientModule,

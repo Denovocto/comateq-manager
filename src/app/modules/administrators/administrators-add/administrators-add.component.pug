@@ -1,0 +1,28 @@
+mat-card.flex.my-10.m-auto.max-w-3xl.max-h-90
+  mat-card-title Add Admnistrator
+  mat-card-content
+    form([formGroup]="administratorsAddForm")
+      .flex.flex-col.p-2
+        .flex.flex-row
+          mat-form-field(color='accent', appearance='fill')
+            mat-label First Name
+            input(matInput, placeholder='First Name', type='text', autocomplete='off', formControlName='administratorFirstName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Middle Name
+            input(matInput, placeholder='Middle Name', type='text', autocomplete='off', formControlName='administratorMiddleName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Last Name
+            input(matInput, placeholder='Last Name', type='text', autocomplete='off', formControlName='administratorLastName')
+        .flex.flex-row
+          mat-form-field(color='accent', appearance='fill')
+            mat-label Second Last Name
+            input(matInput, placeholder='Second Last Name', type='text', autocomplete='off', formControlName='administratorSecondLastName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Email
+            input(matInput, placeholder='Email', type='email', autocomplete='on', formControlName='administratorEmail')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Work Title
+            input(matInput, placeholder='Work Title', type='text', autocomplete='off', formControlName='administratorInstitutionWorkTitle')
+    mat-card-actions(align='end')
+      button(mat-button, color='primary', type='submit', (click)='onAdd()')
+        span Add
