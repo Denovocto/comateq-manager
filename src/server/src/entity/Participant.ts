@@ -30,7 +30,7 @@ export class Participant {
 	})
 	participantSecondLastName?: string;
 
-	@Column('date')
+	@Column('datetime')
 	participantDateOfBirth: Date;
 
 	@Column()

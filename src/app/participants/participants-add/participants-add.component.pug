@@ -1,0 +1,30 @@
+mat-card.flex.my-10.m-auto.max-w-3xl.max-h-90
+  mat-card-title Add Participant
+  mat-card-content
+    form([formGroup]="participantsAddForm")
+      .flex.flex-col.p-2
+        .flex.flex-row
+          mat-form-field(color='accent', appearance='fill')
+            mat-label First Name
+            input(matInput, placeholder='First Name', type='text', autocomplete='off', formControlName='participantFirstName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Middle Name
+            input(matInput, placeholder='Middle Name', type='text', autocomplete='off', formControlName='participantMiddleName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Last Name
+            input(matInput, placeholder='Last Name', type='text', autocomplete='off', formControlName='participantLastName')
+        .flex.flex-row
+          mat-form-field(color='accent', appearance='fill')
+            mat-label Second Last Name
+            input(matInput, placeholder='Second Last Name', type='text', autocomplete='off', formControlName='participantSecondLastName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Birth Date
+            input(matInput, [matDatepicker]='picker', (click)='picker.open()', formControlName='participantDateOfBirth')
+            mat-datepicker-toggle(matSuffix, [for]='picker')
+            mat-datepicker(#picker)
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Grade
+            input(matInput, placeholder='Grade', type='number', formControlName='participantGrade')
+    mat-card-actions(align='end')
+      button(mat-button, color='primary', type='submit', (click)='onAdd()')
+        span Add

@@ -16,10 +16,10 @@ export class Test {
 	@PrimaryGeneratedColumn('uuid')
 	testId: string;
 
-	@Column('date')
+	@Column('datetime')
 	createdAt: Date;
 
-	@Column('date')
+	@Column('datetime')
 	updatedAt?: Date;
 
 	@ManyToMany(type => MultipleChoiceProblem)

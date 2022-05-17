@@ -11,9 +11,16 @@ import { OpenQuestionProblem } from './entity/OpenQuestionProblem';
 import { ParticipantGroup } from './entity/ParticipantGroup';
 import { ParticipantGroupStatus } from './entity/PaticipantGroupStatus';
 import { Coordinator } from './entity/Coordinator';
+var cors = require('cors');
 const app = express();
 const port = 8080;
+
 app.use(express.json());
+app.use(
+	cors({
+		origin: 'http://localhost:4200',
+	})
+);
 
 AppDataSource.initialize()
 	.then(async () => {
@@ -47,6 +54,14 @@ AppDataSource.initialize()
 		// );
 		// const openQuestionProblemRepository =
 		// 	AppDataSource.getRepository(OpenQuestionProblem);
+		app.use(function (req, res, next) {
+			res.header('Access-Control-Allow-Origin', '*');
+			res.header(
+				'Access-Control-Allow-Headers',
+				'Origin, X-Requested-With, Content-Type, Accept'
+			);
+			next();
+		});
 
 		app.get('/', (req, res) => {
 			res.send('Hi! I wasnt expecting you here');
