@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ParticipantForAdd } from '../models/ParticipantForAdd';
+import { ParticipantForAdd } from '../../models/ParticipantForAdd';
 
 const apiURL = 'http://localhost:8080';
 

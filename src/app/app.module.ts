@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TopBarModule } from './modules/top-bar/top-bar.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ParticipantsModule } from './participants/participants.module';
+import { ParticipantsModule } from './modules/participants/participants.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
