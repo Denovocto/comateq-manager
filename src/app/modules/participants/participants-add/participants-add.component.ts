@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ParticipantForAdd } from 'src/app/models/ParticipantForAdd';
 import { ParticipantsService } from '../participants-service';
 
+@Component({
+	selector: 'app-participants-add-success',
+	templateUrl: './participants-add-success.component.pug',
+})
+export class ParticipantsAddSucessComponent {}
 @Component({
 	selector: 'app-participants-add',
 	templateUrl: './participants-add.component.pug',
@@ -38,11 +44,12 @@ export class ParticipantsAddComponent implements OnInit {
 			this.participantsAddForm.getRawValue();
 		this.participantsService.addParticipant(participant).subscribe({
 			next: () => {
-				console.log('Participant added');
+				this.dialog.open(ParticipantsAddSucessComponent);
 			},
 		});
 	}
 	constructor(
+		private dialog: MatDialog,
 		private formBuilder: FormBuilder,
 		private participantsService: ParticipantsService
 	) {}

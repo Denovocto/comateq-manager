@@ -1,0 +1,7 @@
+.flex.flex-col.justify-items-starts
+  mat-card.my-2(*ngFor='let participant of participants')
+    mat-card-title {{ participant.participantFirstName }} {{ participant.participantMiddleName }} {{ participant.participantLastName }} {{ participant.participantSecondLastName }}
+    mat-card-content
+      .flex.flex-col
+        span Birthdate: {{ participant.participantDateOfBirth | date: 'dd/MM/yyyy' }}
+        span Grade: {{ participant.participantGrade }}

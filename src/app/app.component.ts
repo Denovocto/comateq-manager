@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
+	toggle = false;
 	title = 'comateq-manager';
+
+	onToggleMenu(value: boolean) {
+		this.toggle = value;
+	}
 }

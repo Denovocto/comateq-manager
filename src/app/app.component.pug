@@ -1,2 +1,9 @@
-app-top-bar-main
-app-participants-add
+app-top-bar-main((toggleValue)='onToggleMenu($event)')
+mat-sidenav-container(autosize)
+  mat-sidenav-content
+    router-outlet
+  mat-sidenav(mode='side', [opened]='toggle')
+    mat-action-list
+      button.white(mat-list-item, [routerLink]='["/participants"]')
+        mat-icon person
+        span.ml-2 Participants

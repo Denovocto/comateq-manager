@@ -5,11 +5,23 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ParticipantsAddComponent } from './participants-add/participants-add.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import {
+	ParticipantsAddComponent,
+	ParticipantsAddSucessComponent,
+} from './participants-add/participants-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ParticipantsGetComponent } from './participants-get/participants-get.component';
+import { ParticipantsMainComponent } from './participants-main/participants-main.component';
 
 @NgModule({
-	declarations: [ParticipantsAddComponent],
+	declarations: [
+		ParticipantsAddComponent,
+		ParticipantsAddSucessComponent,
+		ParticipantsGetComponent,
+		ParticipantsMainComponent,
+	],
 	imports: [
 		CommonModule,
 		MatCardModule,
@@ -18,7 +30,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 		MatButtonModule,
 		MatDatepickerModule,
 		ReactiveFormsModule,
+		MatDialogModule,
+		MatTabsModule,
 	],
-	exports: [ParticipantsAddComponent],
+	exports: [
+		ParticipantsAddComponent,
+		ParticipantsGetComponent,
+		ParticipantsMainComponent,
+	],
 })
 export class ParticipantsModule {}

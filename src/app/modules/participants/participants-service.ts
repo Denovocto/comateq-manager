@@ -9,6 +9,7 @@ const routes = {
 	participantsAdd: () => `${apiURL}/participant`,
 	participantsSpecific: (participantId?: string) =>
 		`${apiURL}/participant/${participantId}`,
+	participantGet: () => `${apiURL}/participant`,
 };
 
 @Injectable({
@@ -17,7 +18,9 @@ const routes = {
 export class ParticipantsService {
 	constructor(private http: HttpClient) {}
 	addParticipant(participant: ParticipantForAdd): Observable<void> {
-		debugger;
 		return this.http.post<void>(routes.participantsAdd(), participant);
+	}
+	getParticipants(): Observable<ParticipantForAdd[]> {
+		return this.http.get<ParticipantForAdd[]>(routes.participantGet());
 	}
 }

@@ -8,7 +8,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParticipantsModule } from './modules/participants/participants.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
@@ -21,6 +25,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		HttpClientModule,
 		ReactiveFormsModule,
 		FormsModule,
+		MatButtonModule,
+		MatSidenavModule,
+		MatListModule,
+		MatIconModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
