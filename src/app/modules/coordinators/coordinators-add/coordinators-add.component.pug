@@ -1,0 +1,38 @@
+mat-card.flex.my-10.m-auto.max-w-3xl.max-h-90
+  mat-card-title Add Coordinator
+  mat-card-content
+    form([formGroup]="coordinatorsAddForm")
+      .flex.flex-col.p-2
+        .flex.flex-row
+          mat-form-field(color='accent', appearance='fill')
+            mat-label First Name
+            input(matInput, placeholder='First Name', type='text', autocomplete='off', formControlName='coordinatorFirstName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Middle Name
+            input(matInput, placeholder='Middle Name', type='text', autocomplete='off', formControlName='coordinatorMiddleName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Last Name
+            input(matInput, placeholder='Last Name', type='text', autocomplete='off', formControlName='coordinatorLastName')
+        .flex.flex-row
+          mat-form-field(color='accent', appearance='fill')
+            mat-label Second Last Name
+            input(matInput, placeholder='Second Last Name', type='text', autocomplete='off', formControlName='coordinatorSecondLastName')
+          mat-form-field.ml-2(color='accent', appearance='fill')
+            mat-label Email
+            input(matInput, placeholder='Email', type='email', autocomplete='on', formControlName='coordinatorEmail')
+          mat-checkbox.ml-2(formControlName='coordinatorHasDoneARegionalContest')
+            mat-label Has Done a Regional Contest
+        div(*ngIf='coordinatorsAddFormControls.coordinatorHasDoneARegionalContest.value')
+          .flex.flex-row
+            mat-form-field(color='accent', appearance='fill')
+              mat-label Regional Contest Name
+              input(matInput, placeholder='Regional Contest Name', type='text', autocomplete='off', formControlName='coordinatorRegionalContestName')
+            mat-form-field.ml-2(color='accent', appearance='fill')
+              mat-label Regional Contest URL
+              input(matInput, placeholder='Regional Contest Url', type='text', autocomplete='off', formControlName='coordinatorRegionalContestURL')
+            mat-form-field.ml-2(color='accent', appearance='fill')
+              mat-label Regional Contest Logo URI
+              input(matInput, placeholder='Regional Contest Logo URI', type='text', autocomplete='off', formControlName='coordinatorRegionalContestLogoURI')
+    mat-card-actions(align='end')
+      button(mat-button, color='primary', type='submit', (click)='onAdd()')
+        span Add

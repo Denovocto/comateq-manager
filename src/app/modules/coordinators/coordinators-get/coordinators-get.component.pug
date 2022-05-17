@@ -1,0 +1,7 @@
+.flex.flex-col.justify-items-starts
+  mat-card.my-2(*ngFor='let coordinator of coordinators')
+    mat-card-title {{ coordinator.coordinatorFirstName }} {{ coordinator.coordinatorMiddleName }} {{ coordinator.coordinatorLastName }} {{ coordinator.coordinatorSecondLastName }}
+    mat-card-content
+      .flex.flex-col
+        span Email: {{ coordinator.coordinatorEmail }}
+        span Regional Contest Name: {{ coordinator.coordinatorRegionalContestName }}

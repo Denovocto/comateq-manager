@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { CoordinatorsModule } from './modules/coordinators/coordinators.module';
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
@@ -20,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 		AppRoutingModule,
 		TopBarModule,
 		ParticipantsModule,
+		CoordinatorsModule,
 		MatNativeDateModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
